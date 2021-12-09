@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242E5B9427625D7000047100 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9327625D7000047100 /* Model.swift */; };
+		242E5B9727625F4B00047100 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9627625F4B00047100 /* Extensions.swift */; };
+		242E5B99276261CA00047100 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B98276261CA00047100 /* Presenter.swift */; };
+		242E5B9D2762642A00047100 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9C2762642A00047100 /* Schema.swift */; };
+		242E5B9F27626B3F00047100 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9E27626B3F00047100 /* Interactor.swift */; };
 		247D4342275A53D9001091E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D4341275A53D9001091E6 /* AppDelegate.swift */; };
 		247D434C275A53D9001091E6 /* Rewind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247D434A275A53D9001091E6 /* Rewind.xcdatamodeld */; };
 		247D434E275A53DB001091E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D434D275A53DB001091E6 /* Assets.xcassets */; };
@@ -18,9 +23,13 @@
 		24B73BF7275A5C6900B81A2B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B73BF6275A5C6900B81A2B /* Router.swift */; };
 		24B73BF9275A875B00B81A2B /* ListViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B73BF8275A875B00B81A2B /* ListViewInteractor.swift */; };
 		24B73BFB275A8CF300B81A2B /* ListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B73BFA275A8CF300B81A2B /* ListViewPresenter.swift */; };
-		24B73BFD275A935300B81A2B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B73BFC275A935300B81A2B /* Protocols.swift */; };
 		24CE376D276124F400DF2FF3 /* PresentFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE376C276124F400DF2FF3 /* PresentFieldAlert.swift */; };
 		24CE377227612DA000DF2FF3 /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE377127612DA000DF2FF3 /* Constrainable.swift */; };
+		24CE3782276130F200DF2FF3 /* Lembrete+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3780276130F200DF2FF3 /* Lembrete+CoreDataClass.swift */; };
+		24CE3783276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3781276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift */; };
+		24CE3786276131C800DF2FF3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3785276131C800DF2FF3 /* Repository.swift */; };
+		24CE3788276131F800DF2FF3 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3787276131F700DF2FF3 /* ReminderRepository.swift */; };
+		24CE378B2761327200DF2FF3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE378A2761327200DF2FF3 /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242E5B9327625D7000047100 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		242E5B9627625F4B00047100 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		242E5B98276261CA00047100 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		242E5B9C2762642A00047100 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		242E5B9E27626B3F00047100 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		247D433E275A53D9001091E6 /* Rewind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D4341275A53D9001091E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247D434B275A53D9001091E6 /* Rewind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rewind.xcdatamodel; sourceTree = "<group>"; };
@@ -56,9 +70,13 @@
 		24B73BF6275A5C6900B81A2B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		24B73BF8275A875B00B81A2B /* ListViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewInteractor.swift; sourceTree = "<group>"; };
 		24B73BFA275A8CF300B81A2B /* ListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresenter.swift; sourceTree = "<group>"; };
-		24B73BFC275A935300B81A2B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		24CE376C276124F400DF2FF3 /* PresentFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentFieldAlert.swift; sourceTree = "<group>"; };
 		24CE377127612DA000DF2FF3 /* Constrainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrainable.swift; sourceTree = "<group>"; };
+		24CE3780276130F200DF2FF3 /* Lembrete+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lembrete+CoreDataClass.swift"; sourceTree = "<group>"; };
+		24CE3781276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lembrete+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		24CE3785276131C800DF2FF3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		24CE3787276131F700DF2FF3 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
+		24CE378A2761327200DF2FF3 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242E5B9527625F4000047100 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				242E5B9627625F4B00047100 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		247D4335275A53D9001091E6 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +135,12 @@
 		247D4340275A53D9001091E6 /* Rewind */ = {
 			isa = PBXGroup;
 			children = (
+				24CE3780276130F200DF2FF3 /* Lembrete+CoreDataClass.swift */,
+				24CE3781276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift */,
+				242E5B9527625F4000047100 /* Extensions */,
+				24CE378C27614BD600DF2FF3 /* Model */,
+				24CE37892761326400DF2FF3 /* Service */,
+				24CE3784276131BD00DF2FF3 /* Repository */,
 				24CE376E27612D7F00DF2FF3 /* Protocol */,
 				247D4374275A53EE001091E6 /* Scenes */,
 				247D4341275A53D9001091E6 /* AppDelegate.swift */,
@@ -144,7 +176,6 @@
 				247D4377275A5446001091E6 /* ListView.swift */,
 				24B73BF8275A875B00B81A2B /* ListViewInteractor.swift */,
 				24B73BFA275A8CF300B81A2B /* ListViewPresenter.swift */,
-				24B73BFC275A935300B81A2B /* Protocols.swift */,
 				24CE376C276124F400DF2FF3 /* PresentFieldAlert.swift */,
 			);
 			path = Scenes;
@@ -154,8 +185,36 @@
 			isa = PBXGroup;
 			children = (
 				24CE377127612DA000DF2FF3 /* Constrainable.swift */,
+				242E5B9E27626B3F00047100 /* Interactor.swift */,
+				242E5B98276261CA00047100 /* Presenter.swift */,
+				24CE3785276131C800DF2FF3 /* Repository.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		24CE3784276131BD00DF2FF3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				24CE3787276131F700DF2FF3 /* ReminderRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		24CE37892761326400DF2FF3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				24CE378A2761327200DF2FF3 /* CoreDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		24CE378C27614BD600DF2FF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				242E5B9327625D7000047100 /* Model.swift */,
+				242E5B9C2762642A00047100 /* Schema.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +227,7 @@
 				247D433A275A53D9001091E6 /* Sources */,
 				247D433B275A53D9001091E6 /* Frameworks */,
 				247D433C275A53D9001091E6 /* Resources */,
+				242E5BA027627E9D00047100 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -282,20 +342,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		242E5BA027627E9D00047100 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		247D433A275A53D9001091E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242E5B99276261CA00047100 /* Presenter.swift in Sources */,
 				247D434C275A53D9001091E6 /* Rewind.xcdatamodeld in Sources */,
 				247D4378275A5446001091E6 /* ListView.swift in Sources */,
 				24B73BF7275A5C6900B81A2B /* Router.swift in Sources */,
+				24CE3786276131C800DF2FF3 /* Repository.swift in Sources */,
 				24CE377227612DA000DF2FF3 /* Constrainable.swift in Sources */,
 				24B73BF9275A875B00B81A2B /* ListViewInteractor.swift in Sources */,
+				24CE3783276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift in Sources */,
+				242E5B9427625D7000047100 /* Model.swift in Sources */,
+				24CE378B2761327200DF2FF3 /* CoreDataService.swift in Sources */,
 				247D4342275A53D9001091E6 /* AppDelegate.swift in Sources */,
 				247D4376275A53FF001091E6 /* ListViewController.swift in Sources */,
 				24B73BFB275A8CF300B81A2B /* ListViewPresenter.swift in Sources */,
-				24B73BFD275A935300B81A2B /* Protocols.swift in Sources */,
+				24CE3782276130F200DF2FF3 /* Lembrete+CoreDataClass.swift in Sources */,
+				24CE3788276131F800DF2FF3 /* ReminderRepository.swift in Sources */,
+				242E5B9F27626B3F00047100 /* Interactor.swift in Sources */,
+				242E5B9727625F4B00047100 /* Extensions.swift in Sources */,
+				242E5B9D2762642A00047100 /* Schema.swift in Sources */,
 				24CE376D276124F400DF2FF3 /* PresentFieldAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

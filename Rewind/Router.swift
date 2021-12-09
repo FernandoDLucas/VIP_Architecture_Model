@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol Router: AnyObject {
     func start(window: UIWindow?)
@@ -14,6 +15,13 @@ protocol Router: AnyObject {
 
 class MainRouter: Router {
     private let listViewController: ListViewController
+    
+//    private let persistentContainer: NSPersistentContainer = {
+//        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+//        let container = appDelegate?.persistentContainer
+//        guard let persistentContainer = container else { fatalError() }
+//        return persistentContainer
+//    }()
     
     init() {
         self.listViewController = ListViewController()

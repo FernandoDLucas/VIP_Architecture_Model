@@ -6,28 +6,25 @@
 //
 
 import Foundation
-import UIKit
 
-protocol Presenter: AnyObject {
-    associatedtype ViewModel
-    func interactor(didRetrieve itens: [ViewModel])
+protocol ListViewPresentationLogic: AnyObject {
+    func present(viewModel: [ReminderViewModel])
+    func updateValues()
 }
-
-protocol ListPresenter: Presenter{}
-
-class ListViewPresenter: ListPresenter {
+class ListViewPresenter: Presenter {
     
-    typealias ViewModel = Reminder
+    typealias ViewModel = ReminderViewModel
+    typealias Response = Reminder
     
-    weak var view: ListViewController?
+    weak var delegate: ListViewPresentationLogic?
     
-    func interactor(didRetrieve itens: [Reminder]) {
-        view?.updateItens(itens)
+    func interactor(didRetrieve itens: [Response]) {
+        delegate?.present(viewModel: transform(itens))
     }
     
-}
-
-struct Reminder{
-    var title: String
-    var time: String
+    func transform(_ objects: [Reminder]) -> [ReminderViewModel] {
+        return objects.map { reminder in
+            ReminderViewModel(title: reminder.title!, time: reminder.time!.toString)
+        }
+    }
 }

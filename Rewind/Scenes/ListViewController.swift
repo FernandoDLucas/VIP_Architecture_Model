@@ -5,12 +5,11 @@
 //  Created by Fernando de Lucas da Silva Gomes on 03/12/21.
 //
 
-import Foundation
 import UIKit
 
 class ListViewController: UIViewController {
     
-    var viewModel: [Reminder] = []
+    var viewModel: [ReminderViewModel] = []
 
     var interactor: ListViewInteractor?
 
@@ -36,18 +35,22 @@ class ListViewController: UIViewController {
         self.navigationItem.setRightBarButton(barButton, animated: false)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        interactor?.fetchItens()
+    }
+    
     private func buildHierarchy() {
         self.view.addSubview(mainView)
     }
 
     private func setupConstraints() {
-        mainView.anchorToSafeArea(to: self.view.safeAreaLayoutGuide)
+        mainView.anchorToSafeArea(of: self.view.safeAreaLayoutGuide)
     }
     
     func setupVIP() {
         let presenter = ListViewPresenter()
         let interactor = ListViewInteractor(presenter: presenter)
-        presenter.view = self
+        presenter.delegate = self
         self.interactor = interactor
     }
     
@@ -58,11 +61,6 @@ class ListViewController: UIViewController {
             self.interactor?.addItem(text)
         }
         present(alert, animated: true, completion: nil)
-    }
-    
-    public func updateItens(_ itens: [Reminder]) {
-        self.viewModel = itens
-        self.mainView.reloadData()
     }
 }
 
@@ -80,5 +78,26 @@ extension ListViewController: UITableViewSource {
         cell.contentConfiguration = config
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel[indexPath.row]
+        interactor?.deleteItem(with: item.title)
+    }
+}
+
+extension ListViewController: ListViewPresentationLogic {
+    func present(viewModel: [ReminderViewModel]) {
+        self.viewModel = viewModel
+        mainView.reloadData()
+    }
+    
+    func didSaveNewItem(viewModel: ReminderViewModel) {
+        self.viewModel.append(viewModel)
+        mainView.reloadData()
+    }
+    
+    func updateValues() {
+        mainView.reloadData()
     }
 }

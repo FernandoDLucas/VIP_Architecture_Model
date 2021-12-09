@@ -18,10 +18,10 @@ extension Constrainable {
     @discardableResult
     func anchor<T, S>(
                     _ from: KeyPath<UIView, T>,
-                    to referenceView: S,
+                    on referenceView: S,
                     equal to: KeyPath<S, T>,
                     multiplier: CGFloat
-                    ) -> Self where T: NSLayoutDimension{
+                    ) -> Self where T: NSLayoutDimension {
             self[keyPath: from].constraint(equalTo: referenceView[keyPath: to], multiplier: multiplier).isActive = true
             return self
     }
@@ -29,34 +29,30 @@ extension Constrainable {
     @discardableResult
     func anchor<T, Axis, S>(
                         _ from: KeyPath<UIView, T>,
-                        to referenceView: S,
-                        equal to: KeyPath<S, T>)
-                        -> Self where T: NSLayoutAnchor<Axis>{
+                        on referenceView: S,
+                        equal to: KeyPath<S, T>
+                        ) -> Self where T: NSLayoutAnchor<Axis> {
             self[keyPath: from].constraint(equalTo: referenceView[keyPath: to]).isActive = true
             return self
     }
     
     @discardableResult
-    func anchorToSafeArea<S>(
-                            to referenceView: S
-                            ) -> Self where S: UILayoutGuide{
+    func anchorToSafeArea<S>(of referenceView: S) -> Self where S: UILayoutGuide {
         prepareForLayout()
-        self.anchor(\.topAnchor, to: referenceView, equal: \.topAnchor)
-        self.anchor(\.leadingAnchor, to: referenceView, equal: \.leadingAnchor)
-        self.anchor(\.trailingAnchor, to: referenceView, equal: \.trailingAnchor)
-        self.anchor(\.bottomAnchor, to: referenceView, equal: \.bottomAnchor)
+        self.anchor(\.topAnchor, on: referenceView, equal: \.topAnchor)
+        self.anchor(\.leadingAnchor, on: referenceView, equal: \.leadingAnchor)
+        self.anchor(\.trailingAnchor, on: referenceView, equal: \.trailingAnchor)
+        self.anchor(\.bottomAnchor, on: referenceView, equal: \.bottomAnchor)
         return self
     }
     
     @discardableResult
-    func anchorToSuperView<S>(
-                            to referenceView: S
-                            ) -> Self where S: UIView{
+    func anchorToEdges<S>(of referenceView: S) -> Self where S: UIView {
         prepareForLayout()
-        self.anchor(\.topAnchor, to: referenceView, equal: \.topAnchor)
-        self.anchor(\.leadingAnchor, to: referenceView, equal: \.leadingAnchor)
-        self.anchor(\.trailingAnchor, to: referenceView, equal: \.trailingAnchor)
-        self.anchor(\.bottomAnchor, to: referenceView, equal: \.bottomAnchor)
+        self.anchor(\.topAnchor, on: referenceView, equal: \.topAnchor)
+        self.anchor(\.leadingAnchor, on: referenceView, equal: \.leadingAnchor)
+        self.anchor(\.trailingAnchor, on: referenceView, equal: \.trailingAnchor)
+        self.anchor(\.bottomAnchor, on: referenceView, equal: \.bottomAnchor)
         return self
     }
 }

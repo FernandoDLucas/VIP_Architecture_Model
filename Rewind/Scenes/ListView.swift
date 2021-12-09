@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 class ListView: UIView {
     
@@ -32,14 +33,14 @@ class ListView: UIView {
     }
 
     private func setupConstraints() {
-        tableView.anchorToSuperView(to: self)
+        tableView.anchorToEdges(of: self)
     }
     
     public func performUpdates(_ updates: (() -> Void)?) {
         self.tableView.performBatchUpdates(updates, completion: nil)
     }
     
-    func bind<t: UITableViewSource>(_ source: t) {
+    func bind<T: UITableViewSource>(_ source: T) {
         self.tableView.delegate = source
         self.tableView.dataSource = source
     }

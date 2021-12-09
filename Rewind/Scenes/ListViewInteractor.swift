@@ -7,26 +7,43 @@
 
 import Foundation
 
-class ListViewInteractor {
-    private var itens : [Reminder] = []
-    private var presenter: ListViewPresenter
+class ListViewInteractor: Interactor {
     
+    private var presenter: ListViewPresenter
+    private let worker: ReminderRepository
+
     init(presenter: ListViewPresenter){
         self.presenter = presenter
+        self.worker = ReminderRepository()
     }
+
     func addItem(_ item: String?) {
         guard let item = item else {
             return
         }
-        self.itens.append(Reminder(title: item, time: Date().dateNow))
-        presenter.interactor(didRetrieve: self.itens)
+        let reminder = (Reminder(title: item, time: Date()))
+        if worker.save(reminder) {
+            if let objects = worker.fetch() {
+                presenter.interactor(didRetrieve: transform(objects))
+            }
+        }
     }
-}
-
-extension Date {
-    public var dateNow:  String {
-        let formater = DateFormatter()
-        formater.dateFormat = "dd.MM.yyyy HH:MM"
-        return formater.string(from: self)
+    
+    func fetchItens() {
+        if let objects = worker.fetch() {
+            presenter.interactor(didRetrieve: transform(objects))
+        }
     }
+    
+    func deleteItem(with time: String) {
+        _ = worker.delete(title: time)
+        self.fetchItens()
+    }
+    
+    func transform(_ objects: [Lembrete]) -> [Reminder] {
+        return objects.map { lembrete in
+            Reminder(title: lembrete.title, time: lembrete.time)
+        }
+    }
+    
 }
