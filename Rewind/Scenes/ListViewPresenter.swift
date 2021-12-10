@@ -12,7 +12,8 @@ protocol ListViewPresentationLogic: AnyObject {
     func updateValues()
     func presentError(error: String)
 }
-class ListViewPresenter: Presenter {
+
+final class ListViewPresenter: Presenter {
     
     typealias ViewModel = ReminderViewModel
     typealias Response = Reminder

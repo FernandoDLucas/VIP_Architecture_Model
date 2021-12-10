@@ -5,7 +5,6 @@
 //  Created by Fernando de Lucas da Silva Gomes on 09/12/21.
 //
 
-import XCTest
 @testable import Rewind
 import Nimble
 import Quick
@@ -16,11 +15,9 @@ class ReminderRepositoryTest: QuickSpec {
     private let repository = ReminderRepository()
     
     override func spec() {
-        beforeEach {
-            
-        }
         
         describe("Save Method") {
+            self.repository.service = CoreDataService<Lembrete>(saveon: .inMemory)
             context("When the Object is Valid") {
                 let reminder = Reminder(title: "Teste", time: Date())
                 let result = self.repository.save(reminder)
@@ -42,51 +39,34 @@ class ReminderRepositoryTest: QuickSpec {
                     }
                 }
             }
-        }
-        
-        describe("Save Method") {
+            
             context("When the Title is Invalid") {
                 let reminder = Reminder(title: nil, time: Date())
                 let result = self.repository.save(reminder)
                 it("Should Fail") {
-                    switch result {
-                    case .success(_):
-                        fail()
-                    case .failure(_):
-                        succeed()
-                    }
+                    if case .success(_) = result{ fail() }
                 }
                 it("Should Throw Title is Nil"){
-                    switch result {
-                    case .success(_):
-                        fail()
-                    case .failure(let error):
+                    if case .success(_) = result { fail() }
+                    if case .failure(let error) = result {
                         expect(error.cause).to(equal(ManagedObjectError.Lembrete.TitleIsNil))
                     }
                 }
             }
+            
             context("When the Time is Invalid") {
                 let reminder = Reminder(title: "Teste", time: nil)
                 let result = self.repository.save(reminder)
                 it("Should Fail") {
-                    switch result {
-                    case .success(_):
-                        fail()
-                    case .failure(_):
-                        succeed()
-                    }
+                    if case .success(_) = result{ fail() }
                 }
                 it("Should Throw Time is Nil"){
-                    switch result {
-                    case .success(_):
-                        fail()
-                    case .failure(let error):
-                        expect(error.cause)
-                            .to(equal(ManagedObjectError.Lembrete.TimeIsNil))
+                    if case .success(_) = result { fail() }
+                    if case .failure(let error) = result {
+                        expect(error.cause).to(equal(ManagedObjectError.Lembrete.TimeIsNil))
                     }
                 }
             }
         }
     }
-    
 }

@@ -7,8 +7,14 @@
 
 import CoreData
 
-class CoreDataService<T: NSManagedObject> {
+final class CoreDataService<T: NSManagedObject> {
     
+    init(saveon storeType: StoreType ) {
+        self.memorySavingMethod = storeType
+    }
+    
+    let memorySavingMethod: StoreType
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Rewind")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -18,9 +24,27 @@ class CoreDataService<T: NSManagedObject> {
         })
         return container
     }()
+    
+    lazy var inMemoryContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Rewind")
+        let description = NSPersistentStoreDescription()
+        description.type = NSInMemoryStoreType
+        container.persistentStoreDescriptions = [description]
+        container.loadPersistentStores (completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 
     lazy var context: NSManagedObjectContext = {
-        return persistentContainer.viewContext
+        switch self.memorySavingMethod{
+        case .SQLLite:
+            return persistentContainer.viewContext
+        case .inMemory:
+            return inMemoryContainer.viewContext
+        }
     }()
 
     func new() -> T? {
@@ -63,5 +87,11 @@ class CoreDataService<T: NSManagedObject> {
 extension NSManagedObject {
     static var entityName: String {
         return String(describing: self)
+    }
+}
+
+extension CoreDataService {
+    enum StoreType {
+        case inMemory, SQLLite
     }
 }

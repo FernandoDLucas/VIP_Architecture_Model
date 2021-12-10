@@ -8,13 +8,13 @@
 import CoreData
 import UIKit
 
-class ReminderRepository: Repository {
+final class ReminderRepository: Repository {
     
     typealias CoreDataObject = Lembrete
     typealias ResponseObject = Reminder
     public typealias ResultHandler = Result<[Lembrete], ReminderRepositoryError>
     
-    private let service = CoreDataService<Lembrete>()
+    var service = CoreDataService<Lembrete>(saveon: .SQLLite)
 
     @discardableResult
     func save(_ object: Reminder) -> ResultHandler{

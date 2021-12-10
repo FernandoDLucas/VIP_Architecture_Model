@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+final class ListViewController: UIViewController {
     
     var viewModel: [ReminderViewModel] = []
 
@@ -18,7 +18,7 @@ class ListViewController: UIViewController {
         return view
     }()
     
-    lazy var barButton: UIBarButtonItem = {
+    lazy var barButton: UIBarButtonItem = { [weak self] in
         let button = UIBarButtonItem(
                                     barButtonSystemItem: .add,
                                     target: self,

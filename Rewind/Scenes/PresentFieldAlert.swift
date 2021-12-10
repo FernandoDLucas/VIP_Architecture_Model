@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PresentFieldAlert: UIAlertController {
+final class PresentFieldAlert: UIAlertController {
     
     func prepareAnd(_ action: @escaping ((String?) -> Void)) {
         self.addTextField { _ in }

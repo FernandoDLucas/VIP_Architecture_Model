@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ListViewInteractor: Interactor {
+final class ListViewInteractor: Interactor {
     
     private var presenter: ListViewPresenter
     private let worker: ReminderRepository

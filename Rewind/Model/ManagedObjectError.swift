@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ManagedObjectError: Error {
+struct ManagedObjectError {
     enum Lembrete: Error {
         case TitleIsNil, TimeIsNil
     }

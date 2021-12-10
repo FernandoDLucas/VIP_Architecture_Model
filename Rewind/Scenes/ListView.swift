@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CloudKit
 
-class ListView: UIView {
+final class ListView: UIView {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
