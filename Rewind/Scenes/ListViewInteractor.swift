@@ -22,22 +22,30 @@ class ListViewInteractor: Interactor {
             return
         }
         let reminder = (Reminder(title: item, time: Date()))
-        if worker.save(reminder) {
-            if let objects = worker.fetch() {
-                presenter.interactor(didRetrieve: transform(objects))
-            }
+        switch worker.save(reminder) {
+        case .success( _ ):
+            self.fetchItens()
+        case .failure(let error):
+            presenter.didFailed(with: error.localizedDescription)
         }
     }
     
     func fetchItens() {
-        if let objects = worker.fetch() {
+        switch worker.fetch(){
+        case .success(let objects):
             presenter.interactor(didRetrieve: transform(objects))
+        case .failure(let error):
+            presenter.didFailed(with: error.localizedDescription)
         }
     }
     
     func deleteItem(with time: String) {
-        _ = worker.delete(title: time)
-        self.fetchItens()
+        switch worker.delete(title: time) {
+        case .success( _ ):
+            self.fetchItens()
+        case .failure(let error):
+            presenter.didFailed(with: error.localizedDescription)
+        }
     }
     
     func transform(_ objects: [Lembrete]) -> [Reminder] {

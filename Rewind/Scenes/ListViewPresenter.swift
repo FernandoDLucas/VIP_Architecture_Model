@@ -10,6 +10,7 @@ import Foundation
 protocol ListViewPresentationLogic: AnyObject {
     func present(viewModel: [ReminderViewModel])
     func updateValues()
+    func presentError(error: String)
 }
 class ListViewPresenter: Presenter {
     
@@ -26,5 +27,9 @@ class ListViewPresenter: Presenter {
         return objects.map { reminder in
             ReminderViewModel(title: reminder.title!, time: reminder.time!.toString)
         }
+    }
+    
+    func didFailed(with text: String) {
+        delegate?.presentError(error: text)
     }
 }

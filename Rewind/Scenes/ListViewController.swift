@@ -19,20 +19,23 @@ class ListViewController: UIViewController {
     }()
     
     lazy var barButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .add,
-                                     target: self,
-                                     action: #selector(addItem))
+        let button = UIBarButtonItem(
+                                    barButtonSystemItem: .add,
+                                    target: self,
+                                    action: #selector(addItem)
+        )
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
         buildHierarchy()
         setupConstraints()
         mainView.bind(self)
-        setupVIP()
+        configure()
         self.navigationItem.setRightBarButton(barButton, animated: false)
+        self.title = "Adicione um Lembrete"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +50,7 @@ class ListViewController: UIViewController {
         mainView.anchorToSafeArea(of: self.view.safeAreaLayoutGuide)
     }
     
-    func setupVIP() {
+    func configure() {
         let presenter = ListViewPresenter()
         let interactor = ListViewInteractor(presenter: presenter)
         presenter.delegate = self
@@ -56,7 +59,11 @@ class ListViewController: UIViewController {
     
     @objc
     func addItem() {
-        let alert = PresentFieldAlert(title: "Lembrete", message: "Adicione um lembrete", preferredStyle: .alert)
+        let alert = PresentFieldAlert(
+                                    title: "Lembrete",
+                                    message: "Adicione um lembrete",
+                                    preferredStyle: .alert
+        )
         alert.prepareAnd { text in
             self.interactor?.addItem(text)
         }
@@ -99,5 +106,14 @@ extension ListViewController: ListViewPresentationLogic {
     
     func updateValues() {
         mainView.reloadData()
+    }
+    
+    func presentError(error: String){
+        let alert = PresentFieldAlert(
+                                title: "Error",
+                                message: "error",
+                                preferredStyle: .alert
+        )
+        present(alert, animated: true, completion: nil)
     }
 }

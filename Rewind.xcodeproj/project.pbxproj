@@ -12,6 +12,10 @@
 		242E5B99276261CA00047100 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B98276261CA00047100 /* Presenter.swift */; };
 		242E5B9D2762642A00047100 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9C2762642A00047100 /* Schema.swift */; };
 		242E5B9F27626B3F00047100 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5B9E27626B3F00047100 /* Interactor.swift */; };
+		242E5BA4276291DC00047100 /* ReminderRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5BA3276291DC00047100 /* ReminderRepositoryTest.swift */; };
+		242E5BA72762947200047100 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 242E5BA62762947200047100 /* Nimble */; };
+		242E5BAA276294A700047100 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 242E5BA9276294A700047100 /* Quick */; };
+		242E5BAC2762A4EA00047100 /* ManagedObjectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E5BAB2762A4EA00047100 /* ManagedObjectError.swift */; };
 		247D4342275A53D9001091E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D4341275A53D9001091E6 /* AppDelegate.swift */; };
 		247D434C275A53D9001091E6 /* Rewind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247D434A275A53D9001091E6 /* Rewind.xcdatamodeld */; };
 		247D434E275A53DB001091E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247D434D275A53DB001091E6 /* Assets.xcassets */; };
@@ -30,6 +34,8 @@
 		24CE3786276131C800DF2FF3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3785276131C800DF2FF3 /* Repository.swift */; };
 		24CE3788276131F800DF2FF3 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE3787276131F700DF2FF3 /* ReminderRepository.swift */; };
 		24CE378B2761327200DF2FF3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE378A2761327200DF2FF3 /* CoreDataService.swift */; };
+		24EFCC602762BBAF002EDFA5 /* ReminderRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EFCC5F2762BBAF002EDFA5 /* ReminderRepositoryError.swift */; };
+		4121FB02982BB41CDAD1CC43 /* Pods_RewindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6871242BF61E4C19CECCD4AD /* Pods_RewindTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,8 @@
 		242E5B98276261CA00047100 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		242E5B9C2762642A00047100 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
 		242E5B9E27626B3F00047100 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		242E5BA3276291DC00047100 /* ReminderRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepositoryTest.swift; sourceTree = "<group>"; };
+		242E5BAB2762A4EA00047100 /* ManagedObjectError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectError.swift; sourceTree = "<group>"; };
 		247D433E275A53D9001091E6 /* Rewind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D4341275A53D9001091E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247D434B275A53D9001091E6 /* Rewind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rewind.xcdatamodel; sourceTree = "<group>"; };
@@ -77,6 +85,10 @@
 		24CE3785276131C800DF2FF3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		24CE3787276131F700DF2FF3 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		24CE378A2761327200DF2FF3 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		24EFCC5F2762BBAF002EDFA5 /* ReminderRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepositoryError.swift; sourceTree = "<group>"; };
+		40B32A74C09D0A30DA10323D /* Pods-RewindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RewindTests.debug.xcconfig"; path = "Target Support Files/Pods-RewindTests/Pods-RewindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6871242BF61E4C19CECCD4AD /* Pods_RewindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RewindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC65D0860C2ABA498576B2D4 /* Pods-RewindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RewindTests.release.xcconfig"; path = "Target Support Files/Pods-RewindTests/Pods-RewindTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242E5BAA276294A700047100 /* Quick in Frameworks */,
+				242E5BA72762947200047100 /* Nimble in Frameworks */,
+				4121FB02982BB41CDAD1CC43 /* Pods_RewindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +134,8 @@
 				247D435A275A53DB001091E6 /* RewindTests */,
 				247D4364275A53DB001091E6 /* RewindUITests */,
 				247D433F275A53D9001091E6 /* Products */,
+				24EFCC662762BD97002EDFA5 /* Frameworks */,
+				5D68E31CF65F844FAFC5AFA6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,12 +154,12 @@
 			children = (
 				24CE3780276130F200DF2FF3 /* Lembrete+CoreDataClass.swift */,
 				24CE3781276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift */,
-				242E5B9527625F4000047100 /* Extensions */,
-				24CE378C27614BD600DF2FF3 /* Model */,
-				24CE37892761326400DF2FF3 /* Service */,
-				24CE3784276131BD00DF2FF3 /* Repository */,
 				24CE376E27612D7F00DF2FF3 /* Protocol */,
 				247D4374275A53EE001091E6 /* Scenes */,
+				24CE3784276131BD00DF2FF3 /* Repository */,
+				24CE37892761326400DF2FF3 /* Service */,
+				24CE378C27614BD600DF2FF3 /* Model */,
+				242E5B9527625F4000047100 /* Extensions */,
 				247D4341275A53D9001091E6 /* AppDelegate.swift */,
 				24B73BF6275A5C6900B81A2B /* Router.swift */,
 				247D434D275A53DB001091E6 /* Assets.xcassets */,
@@ -156,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				247D435B275A53DB001091E6 /* RewindTests.swift */,
+				242E5BA3276291DC00047100 /* ReminderRepositoryTest.swift */,
 			);
 			path = RewindTests;
 			sourceTree = "<group>";
@@ -196,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				24CE3787276131F700DF2FF3 /* ReminderRepository.swift */,
+				24EFCC5F2762BBAF002EDFA5 /* ReminderRepositoryError.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -213,8 +232,26 @@
 			children = (
 				242E5B9327625D7000047100 /* Model.swift */,
 				242E5B9C2762642A00047100 /* Schema.swift */,
+				242E5BAB2762A4EA00047100 /* ManagedObjectError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		24EFCC662762BD97002EDFA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6871242BF61E4C19CECCD4AD /* Pods_RewindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D68E31CF65F844FAFC5AFA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40B32A74C09D0A30DA10323D /* Pods-RewindTests.debug.xcconfig */,
+				EC65D0860C2ABA498576B2D4 /* Pods-RewindTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +279,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 247D436E275A53DB001091E6 /* Build configuration list for PBXNativeTarget "RewindTests" */;
 			buildPhases = (
+				D5E4D683743D04797B4A80AE /* [CP] Check Pods Manifest.lock */,
 				247D4353275A53DB001091E6 /* Sources */,
 				247D4354275A53DB001091E6 /* Frameworks */,
 				247D4355275A53DB001091E6 /* Resources */,
@@ -252,6 +290,10 @@
 				247D4359275A53DB001091E6 /* PBXTargetDependency */,
 			);
 			name = RewindTests;
+			packageProductDependencies = (
+				242E5BA62762947200047100 /* Nimble */,
+				242E5BA9276294A700047100 /* Quick */,
+			);
 			productName = RewindTests;
 			productReference = 247D4357275A53DB001091E6 /* RewindTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -306,6 +348,10 @@
 				Base,
 			);
 			mainGroup = 247D4335275A53D9001091E6;
+			packageReferences = (
+				242E5BA52762947200047100 /* XCRemoteSwiftPackageReference "Nimble" */,
+				242E5BA8276294A700047100 /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = 247D433F275A53D9001091E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +406,28 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		D5E4D683743D04797B4A80AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RewindTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -372,6 +440,7 @@
 				247D4378275A5446001091E6 /* ListView.swift in Sources */,
 				24B73BF7275A5C6900B81A2B /* Router.swift in Sources */,
 				24CE3786276131C800DF2FF3 /* Repository.swift in Sources */,
+				242E5BAC2762A4EA00047100 /* ManagedObjectError.swift in Sources */,
 				24CE377227612DA000DF2FF3 /* Constrainable.swift in Sources */,
 				24B73BF9275A875B00B81A2B /* ListViewInteractor.swift in Sources */,
 				24CE3783276130F200DF2FF3 /* Lembrete+CoreDataProperties.swift in Sources */,
@@ -386,6 +455,7 @@
 				242E5B9727625F4B00047100 /* Extensions.swift in Sources */,
 				242E5B9D2762642A00047100 /* Schema.swift in Sources */,
 				24CE376D276124F400DF2FF3 /* PresentFieldAlert.swift in Sources */,
+				24EFCC602762BBAF002EDFA5 /* ReminderRepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				247D435C275A53DB001091E6 /* RewindTests.swift in Sources */,
+				242E5BA4276291DC00047100 /* ReminderRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +663,7 @@
 		};
 		247D436F275A53DB001091E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40B32A74C09D0A30DA10323D /* Pods-RewindTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,6 +689,7 @@
 		};
 		247D4370275A53DB001091E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC65D0860C2ABA498576B2D4 /* Pods-RewindTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -726,6 +799,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		242E5BA52762947200047100 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		242E5BA8276294A700047100 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		242E5BA62762947200047100 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 242E5BA52762947200047100 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		242E5BA9276294A700047100 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 242E5BA8276294A700047100 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		247D434A275A53D9001091E6 /* Rewind.xcdatamodeld */ = {

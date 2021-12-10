@@ -36,10 +36,6 @@ class ListView: UIView {
         tableView.anchorToEdges(of: self)
     }
     
-    public func performUpdates(_ updates: (() -> Void)?) {
-        self.tableView.performBatchUpdates(updates, completion: nil)
-    }
-    
     func bind<T: UITableViewSource>(_ source: T) {
         self.tableView.delegate = source
         self.tableView.dataSource = source

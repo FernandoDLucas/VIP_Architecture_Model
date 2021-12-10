@@ -29,13 +29,8 @@ class CoreDataService<T: NSManagedObject> {
         return T(entity: entity, insertInto: context)
     }
     
-    func save() -> Bool {
-        do {
-            try context.save()
-            return true
-        } catch {
-            return false
-        }
+    func save() throws{
+        try context.save()
     }
     
     func delete(object: T) -> T? {
@@ -48,27 +43,20 @@ class CoreDataService<T: NSManagedObject> {
         }
     }
     
-    func retriveAll() -> [T]? {
-        let fetch = NSFetchRequest<T>(entityName: T.entityName)
-        do {
-            let objects = try context.fetch(fetch)
-            return objects
-        } catch {
-            return nil
-        }
+    func reset() {
+        context.reset()
     }
     
-    func retrive(predicate: NSPredicate) -> T? {
+    func retriveAll() throws -> [T] {
+        let fetch = NSFetchRequest<T>(entityName: T.entityName)
+        return try context.fetch(fetch)
+    }
+    
+    func retrive(predicate: NSPredicate) throws -> T? {
         let fetch = NSFetchRequest<T>(entityName: T.entityName)
         fetch.sortDescriptors = [NSSortDescriptor(key: Schema.Album.Field.title.rawValue, ascending: true)]
         fetch.predicate  = predicate
-        do {
-            let objects = try context.fetch(fetch)
-            return objects.first
-        } catch let error as NSError {
-            print(error)
-            return nil
-        }
+        return try context.fetch(fetch).first
     }
 }
 

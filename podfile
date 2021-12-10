@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Whatever pods you need for your app go here
+
+target 'RewindTests' do
+  use_frameworks!
+
+pod 'SwiftLint'
+
+end

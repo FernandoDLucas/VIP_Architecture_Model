@@ -10,5 +10,6 @@ import Foundation
 protocol Repository {
     associatedtype CoreDataObject
     associatedtype ResponseObject
-    func save(_ object: ResponseObject) -> Bool
+    associatedtype ResultHandler
+    func save(_ object: ResponseObject) -> ResultHandler
 }
