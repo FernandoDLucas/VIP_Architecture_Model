@@ -78,7 +78,7 @@ final class CoreDataService<T: NSManagedObject> {
     
     func retrive(predicate: NSPredicate) throws -> T? {
         let fetch = NSFetchRequest<T>(entityName: T.entityName)
-        fetch.sortDescriptors = [NSSortDescriptor(key: Schema.Album.Field.title.rawValue, ascending: true)]
+        fetch.sortDescriptors = [NSSortDescriptor(key: Schema.Lembrete.Field.title.rawValue, ascending: true)]
         fetch.predicate  = predicate
         return try context.fetch(fetch).first
     }

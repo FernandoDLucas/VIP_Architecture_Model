@@ -16,7 +16,6 @@ final class ReminderRepository: Repository {
     
     var service = CoreDataService<Lembrete>(saveon: .SQLLite)
 
-    @discardableResult
     func save(_ object: Reminder) -> ResultHandler{
         guard let lembrete = service.new() else {
             return .failure(ReminderRepositoryError(error: .FailCreatingObject, cause: nil))

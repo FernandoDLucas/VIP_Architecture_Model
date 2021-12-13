@@ -8,7 +8,7 @@
 import Foundation
 
 struct Schema {
-    struct Album {
+    struct Lembrete {
         enum Field: String {
             case title
             case time
